@@ -1,0 +1,10 @@
+# .gitpod.yml
+tasks:
+  - init: |
+      sudo apt-get update
+      sudo apt-get install -y openssh-server adb scrcpy
+      sudo /usr/sbin/sshd
+      sudo service ssh start
+      sudo chmod 700 ~/.ssh
+  - command: |
+      sudo nano /etc/ssh/sshd_config
